@@ -1,3 +1,17 @@
+"""
+Project: All longest Palindome Subsequence
+Descripttion: Given a list, find the longest palindromic 
+    subsequence. If there is multiple, return those as well.
+    This is found by using dynamic programming. 
+    We create a 2D table and fill it using a bottom up approach.
+    For subsequence of length one (a single character) stored as palindrom
+    For subsequences of length two: sequence is palindromic if they are identical
+    For subsequences of length three or more: check if first and last character match,
+        we check each first and last character by pulling dp[left+1][right-1].
+        Then we continue process and indexing and storingg and incrementing max length.
+Author: Donald Kremer 
+Date: Fall 2023
+"""
 def AllLongestPalindromeSubseqs(s):
     rows,cols = len(s), len(s)
     dp=[[0] * cols for i in range(rows)]
